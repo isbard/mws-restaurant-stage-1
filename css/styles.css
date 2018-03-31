@@ -312,6 +312,8 @@ nav h1 a {
 #restaurant-hours td {
   color: #666;
 }
+
+/* ====================== Accessibility extras ===================== */
 .skipLink{
   position: absolute;
   left:-999px;
