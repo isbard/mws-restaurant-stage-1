@@ -177,6 +177,10 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     google.maps.event.addListener(marker, 'click', () => {
       window.location.href = marker.url
     });
+/*     google.maps.event.addListener(marker, 'mouseover', () => {
+      self.map.setCenter(marker.getPosition());
+      console.log('Hovered');
+    }); */
     self.markers.push(marker);
   });
 }
@@ -184,7 +188,8 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 installServiceWorker = () => {
   if (navigator.serviceWorker){
     navigator.serviceWorker.register('sw.js').then(() => {
-      console.log('sw');
+      console.log('Registered');
     });
   }
 }
+

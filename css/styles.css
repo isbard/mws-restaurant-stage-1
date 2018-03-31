@@ -318,6 +318,9 @@ nav h1 a {
   position: absolute;
   left:-999px;
 }
+area:focus, area:hover{
+  border: 2px solid #000;
+}
 
 /* ================ Restaurant Details Media Queries================ */
 
