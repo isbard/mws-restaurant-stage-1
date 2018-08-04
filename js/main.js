@@ -143,7 +143,7 @@ createRestaurantHTML = (restaurant) => {
   image.className = 'restaurant-img';
   image.alt =  restaurant.name + ' restaurant - ' + restaurant.photograph_description;
   image.title = restaurant.name;
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.src = '/img/' + restaurant.photograph + '.jpg';
   li.append(image);
 
   const name = document.createElement('h3');
@@ -177,10 +177,6 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     google.maps.event.addListener(marker, 'click', () => {
       window.location.href = marker.url
     });
-/*     google.maps.event.addListener(marker, 'mouseover', () => {
-      self.map.setCenter(marker.getPosition());
-      console.log('Hovered');
-    }); */
     self.markers.push(marker);
   });
 }
