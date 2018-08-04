@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   fetchNeighborhoods();
   fetchCuisines();
   installServiceWorker();
+  DBHelper.setUpDB();
 });
 
 /**
@@ -188,4 +189,3 @@ installServiceWorker = () => {
     });
   }
 }
-

@@ -22,7 +22,6 @@ class DBHelper {
       if (xhr.status === 200) { // Got a success response from server!
         const json = JSON.parse(xhr.responseText);
         const restaurants = Object.values(json);
-        console.log(restaurants);
         callback(null, restaurants);
       } else { // Oops!. Got an error from server.
         const error = (`Request failed. Returned status of ${xhr.status}`);
@@ -167,5 +166,15 @@ class DBHelper {
     );
     return marker;
   }
+
+  static setUpDB() {
+    console.log('Setting Up');
+    idb.open('restaurants', 1, function(upgradeDb){
+        var keyValStore = upgradeDb.createObjectStore('keyVal');
+        keyValStore.put('world' , 'hello');    
+    }).then(function(db){
+        
+    })
+  };
 
 }
